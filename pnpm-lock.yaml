@@ -1,0 +1,29 @@
+lockfileVersion: 5.4
+
+dependencies:
+  lodash:
+    version: 5.0.0
+    resolution: 
+      integrity: sha512-xyz
+  axios:
+    version: 100.0.0
+    resolution:
+      integrity: sha512-abc
+  invalid-package:
+    version: 0.0.0
+    resolution:
+      integrity: sha512-def
+
+packages:
+  /lodash/5.0.0:
+    resolution:
+      integrity: sha512-xyz
+    dev: false
+  /axios/100.0.0:
+    resolution:
+      integrity: sha512-abc
+    dev: false
+  /invalid-package/0.0.0:
+    resolution:
+      integrity: sha512-def
+    dev: true
