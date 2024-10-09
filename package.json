@@ -1,13 +1,70 @@
 {
-  "name": "error-prone-project",
+  "name": "api-documentation",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "pnpm copy && pnpm lint && pnpm build:docs",
+    "build:docs": "docusaurus build --out-dir dist",
+    "build:openapi": "pnpm generate:openapi",
+    "serve": "docusaurus serve --dir dist",
+    "copy": "pnpm copy:references && pnpm copy:openapi",
+    "copy:references": "tsx scripts/copy-references.ts",
+    "copy:openapi": "tsx scripts/copy-openapi.ts",
+    "generate:openapi": "docusaurus gen-api-docs all",
+    "lint": "concurrently \"npm:lint:*\"",
+    "lint:js": "biome check .",
+    "format": "biome format --write ."
+  },
   "dependencies": {
-    "lodash": "^4.17.0",
-    "lodash": "^5.0.0", 
-    "axios": "^100.0.0"
+    "@docusaurus/core": "3.5.2",
+    "@docusaurus/plugin-google-gtag": "3.5.2",
+    "@docusaurus/preset-classic": "3.5.2",
+    "@docusaurus/theme-common": "3.5.2",
+    "@easyops-cn/docusaurus-search-local": "0.44.5",
+    "@mdx-js/react": "3.0.1",
+    "clsx": "2.1.1",
+    "docusaurus-plugin-openapi-docs": "4.1.0",
+    "docusaurus-theme-openapi-docs": "4.1.0",
+    "file-saver": "2.0.5",
+    "prism-react-renderer": "2.4.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "invalid-package": "git+https://github.com/nonexistent/repo.git"
+    "@biomejs/biome": "1.9.3",
+    "@docusaurus/module-type-aliases": "3.5.2",
+    "@docusaurus/tsconfig": "3.5.2",
+    "@docusaurus/types": "3.5.2",
+    "@swc/core": "1.7.26",
+    "@types/cross-spawn": "6.0.6",
+    "@types/fs-extra": "11.0.4",
+    "concurrently": "9.0.1",
+    "docusaurus-plugin-image-zoom": "2.0.0",
+    "dotenv": "16.4.5",
+    "fs-extra": "11.2.0",
+    "picocolors": "1.1.0",
+    "prettier": "3.3.3",
+    "swc-loader": "0.2.6",
+    "tsx": "4.19.1",
+    "typescript": "5.6.2"
+  },
+  "peerDependencies": {
+    "@reduxjs/toolkit": "1.9.7"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.17"
   }
 }
