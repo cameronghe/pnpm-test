@@ -1,0 +1,13 @@
+{
+  "name": "error-prone-project",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.0",
+    "lodash": "^5.0.0", 
+    "axios": "^100.0.0"
+  },
+  "devDependencies": {
+    "invalid-package": "git+https://github.com/nonexistent/repo.git"
+  }
+}
